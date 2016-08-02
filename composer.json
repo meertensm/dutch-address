@@ -1,0 +1,22 @@
+{
+    "name": "mcs/dutch-address",
+    "description": "Split a Dutch street-address into a street, housenumber and extension",
+    "license": "MIT",
+    "keywords": ["dutch-address"],
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Michiel Meertens",
+            "email": "meertensmichiel28@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 5.4"
+    },
+    "require-dev": {},
+    "autoload": {
+        "psr-4": {
+            "MCS\\": "src"
+        }
+    }
+}
