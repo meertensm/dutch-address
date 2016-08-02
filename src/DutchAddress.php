@@ -5,6 +5,8 @@ class DutchAddress
 {
     const REGEX = "/^(\d*[\wäöüß\d '\-\.]+)[,\s]+(\d+)\s*([\wäöüß\d\-\/]*)$/i";
     
+    public $success = false;
+    
     public $street;
     public $housenumber;
     public $extension;
@@ -19,6 +21,7 @@ class DutchAddress
         preg_match(self::REGEX, $address, $parted);
         
         if (count($parted) != 4) {
+            $this->street = $address;
             return false;    
         }
         
@@ -30,9 +33,11 @@ class DutchAddress
         
         foreach($parted as $key => $value) {
             if (strlen($value) > 0) {
-                $this->{$key} = $value;    
+                $this->{$key} = trim($value);    
             }
         }
+        
+        $this->success = true;
     }
     
 }
