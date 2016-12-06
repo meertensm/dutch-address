@@ -16,17 +16,6 @@ try{
     $address = new MCS\DutchAddress('Jan Steenstraat 75');
     
     print_r($address);
-    
-    /**
-    Result:
-    MCS\DutchAddress Object
-    (
-        [success] => 1
-        [street] => Jan Steenstraat
-        [housenumber] => 75
-        [extension] => 
-    )
-    */
         
 } catch (Exception $e) {
     print_r($e->getMessage());    
